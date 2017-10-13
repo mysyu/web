@@ -19,37 +19,36 @@ namespace Web
 
         public DB()
         {
-            Connect();
         }
-        public DataTable Select(String command,Dictionary<String,Object>dic)
+        public DataTable Select(String command, Dictionary<String, Object> dic)
         {
-            Connect();
+            if (!isConnect) throw new Exception("DB not Connect");
             DataTable result = new DataTable();
             MySqlCommand cmd = new MySqlCommand(command, DBConnection);
-            foreach (var key in dic.Keys)
-                cmd.Parameters.AddWithValue(key, dic[key]);
+            if (dic != null)
+                foreach (var key in dic.Keys)
+                    cmd.Parameters.AddWithValue(key, dic[key]);
             result.Load(cmd.ExecuteReader());
-            DisConnect();
             return result;
         }
         public int ExecuteNonQuery(String command, Dictionary<String, Object> dic)
         {
-            Connect();
+            if (!isConnect) throw new Exception("DB not Connect");
             MySqlCommand cmd = new MySqlCommand(command, DBConnection);
-            foreach (var key in dic.Keys)
-                cmd.Parameters.AddWithValue(key, dic[key]);
+            if (dic != null)
+                foreach (var key in dic.Keys)
+                    cmd.Parameters.AddWithValue(key, dic[key]);
             int result = cmd.ExecuteNonQuery();
-            DisConnect();
             return result;
         }
         public Object ExecuteScalar(String command, Dictionary<String, Object> dic)
         {
-            Connect();
+            if (!isConnect) throw new Exception("DB not Connect");
             MySqlCommand cmd = new MySqlCommand(command, DBConnection);
-            foreach (var key in dic.Keys)
-                cmd.Parameters.AddWithValue(key, dic[key]);
+            if (dic != null)
+                foreach (var key in dic.Keys)
+                    cmd.Parameters.AddWithValue(key, dic[key]);
             Object result = cmd.ExecuteScalar();
-            DisConnect();
             return result;
         }
         public bool isConnect
@@ -59,11 +58,11 @@ namespace Web
                 return DBConnection != null;
             }
         }
-        public void Connect()
+        public void Connect(String DBHost, String DBUser, String DBPassword, String DBName, String DBCharSet = "utf8")
         {
             if (!isConnect)
             {
-                DBConnection = new MySqlConnection(String.Format("server={0};uid={1};pwd={2};database={3};charset={4};Connection Timeout={5}", DBHost, DBUser, DBPassword, DBName, DBCharSet, DBTimeout));
+                DBConnection = new MySqlConnection(String.Format("server={0};uid={1};pwd={2};database={3};charset={4}", DBHost, DBUser, DBPassword, DBName, DBCharSet));
                 DBConnection.Open();
             }
         }
