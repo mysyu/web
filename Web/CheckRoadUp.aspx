@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="road.aspx.cs" Inherits="Web.road" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CheckRoadUp.aspx.cs" Inherits="Web.road" %>
 
 <!DOCTYPE html>
 
@@ -21,7 +21,7 @@
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDqmRTK0wSYfL3f0wAg3oPFKVFGUX6Yuzw&libraries=geometry&callback=initMap" async defer></script>
-    <title>Simple Map</title>
+    <title>Check Road Up</title>
 </head>
 <body>
     <form id="form1" runat="server">

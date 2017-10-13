@@ -85,7 +85,7 @@
     <Content Include="default.aspx" />
     <Content Include="demo.aspx" />
     <Content Include="map.js" />
-    <Content Include="road.aspx" />
+    <Content Include="CheckRoadUp.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -108,12 +108,12 @@
       <DependentUpon>demo.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="road.aspx.cs">
-      <DependentUpon>road.aspx</DependentUpon>
+    <Compile Include="CheckRoadUp.aspx.cs">
+      <DependentUpon>CheckRoadUp.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="road.aspx.designer.cs">
-      <DependentUpon>road.aspx</DependentUpon>
+    <Compile Include="CheckRoadUp.aspx.designer.cs">
+      <DependentUpon>CheckRoadUp.aspx</DependentUpon>
     </Compile>
     <Compile Include="WebService.asmx.cs">
       <DependentUpon>WebService.asmx</DependentUpon>
