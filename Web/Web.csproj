@@ -84,8 +84,6 @@
   <ItemGroup>
     <Content Include="default.aspx" />
     <Content Include="demo.aspx" />
-    <Content Include="fb.jpg" />
-    <Content Include="home.jpg" />
     <Content Include="list.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
