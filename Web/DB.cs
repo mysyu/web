@@ -11,7 +11,7 @@ namespace Web
     {
         private static String DBHost = "mysyu.ddns.net";
         private static String DBUser = "mysyu";
-        private static String DBPassword = "mysyu";
+        private static String DBPassword = "j197350";
         private static String DBName = "mysyu";
         private static String DBCharSet = "utf8";
         private static String DBTimeout = "1";
